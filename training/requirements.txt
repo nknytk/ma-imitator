@@ -1,0 +1,5 @@
+torch
+pytorch_lightning
+transformers
+fugashi[unidic-lite]
+onnx
