@@ -35,7 +35,7 @@ $ python count_chars.py data/corpus
 $ python create_config.py
 ```
 
-unidic_lite_imitatorでは、コーパス中の99.5%の文字に個別の文字IDを割り当て、登場頻度の少ない文字は未知ご扱いにするよう設定ファイルを作成しています。
+unidic_lite_imitatorでは、コーパス中の99.5%の文字に個別の文字IDを割り当て、登場頻度の少ない文字は未知語扱いにするよう設定ファイルを作成しています。
 
 ### 4. 学習データ作成
 
@@ -67,5 +67,5 @@ $ python train.py configs/unidic_lite.json
 
 ```
 $ python to_onnx.py 192 PATH_TO_TRAINED_BEST_CHECKPOINT ../dist/python/unidic_lite_imitator/src/unidic_lite_imitator/model.onnx
-$ python ckpt_to_pth.py PATH_TO_TRAINED_BEST_CHECKPOINT ../dist/python/unidic_lite_imitator/src/unidic_lite_imitator/model.pth
+$ python ckpt_to_pth.py PATH_TO_TRAINED_BEST_CHECKPOINT ../dist/python/unidic_lite_imitator_transformers/src/unidic_lite_imitator_transformers/model.pth
 ```
