@@ -50,20 +50,20 @@ class Preprocessor:
             encoded['token_type_ids'] = [0] * len(token_ids)
         return encoded
 
-    def encode_training_input(self, fugashi_tagger, text: str, include_metadata: bool=False, do_padding: bool=False):
+    def encode_training_input(self, tokenizer, text: str, include_metadata: bool=False, do_padding: bool=False):
         text = text[:self.max_length]
         _input = self.encode_estimation_input(text, include_metadata)
 
         idx = 0
         pos_ids = []
-        for word in fugashi_tagger(text):
-            _idx = text.find(word.surface, idx)
+        for word, pos in tokenizer.tokenize(text):
+            _idx = text.find(word, idx)
             for _i in range(idx, _idx):
                 pos_ids.append(self.pos_to_id['[PAD]'])
-            pos_ids.append(self.pos_to_id[word.pos.split(',')[0]])
-            for _i in range(1, len(word.surface)):
+            pos_ids.append(self.pos_to_id[pos])
+            for _i in range(1, len(word)):
                 pos_ids.append(self.pos_to_id['前文字と同じ単語内'])
-            idx = _idx + len(word.surface)
+            idx = _idx + len(word)
         _input['labels'] = pos_ids
 
         if do_padding:

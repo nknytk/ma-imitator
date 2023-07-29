@@ -1,12 +1,19 @@
 import json
 import random
 import sys
-import fugashi
+import tokenizers
 import preprocess
 
 
-def create(config_file_path: str, data_file_paths: str, output_file_path: str):
-    tagger = fugashi.Tagger()
+def create(config_file_path: str, data_file_paths: str, output_file_path: str, tokenizer: str = 'fugashi'):
+    if tokenizer == 'fugashi':
+        tagger = FugashiTokenizer()
+    elif tokenizer == 'sudachi_b'
+        tagger = SudachiTokenizer('B')
+    elif tokenizer == 'sudachi_c'
+        tagger = SudachiTokenizer('C')
+    else:
+        raise Exception('invalid tokenizer is specified')
     preprocessor = preprocess.Preprocessor(config_file_path)
 
     target_length = random.randint(1, preprocessor.max_length)

@@ -3,4 +3,6 @@ pytorch_lightning
 pytorch_optimizer
 transformers
 fugashi[unidic-lite]
+sudachipy
+sudachidict-full
 onnx
