@@ -2,6 +2,7 @@ import torch
 from transformers import AlbertConfig, AlbertModel, AlbertForMaskedLM
 from transformers.models.albert.modeling_albert import AlbertMLMHead
 import pytorch_lightning as pl
+import pytorch_optimizer
 
 
 class PartOfSpeechEstimator(AlbertForMaskedLM):
@@ -38,7 +39,8 @@ class PartOfSpeechEstimatorPL(pl.LightningModule):
         return output.loss
 
     def configure_optimizers(self):
-        return torch.optim.Adam(self.parameters(), lr=self.hparams.lr)
+        #return torch.optim.Adam(self.parameters(), lr=self.hparams.lr)
+        return pytorch_optimizer.Lamb(self.parameters(), lr=self.hparams.lr)
 
     def forward(self, *args, **kwargs):
         return self.model(*args, **kwargs).logits.argmax(-1)

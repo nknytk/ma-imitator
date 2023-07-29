@@ -15,9 +15,6 @@ NUM_FILES = 32
 
 
 def process(input_file_name: str, output_dirname: str):
-    with open('data/skiplist.txt') as fp:
-        skip_ids = set(fp.read().strip().splitlines())
-
     os.makedirs(output_dirname, exist_ok=True)
     output_files = [open(os.path.join(output_dirname, f'corpus_{i}.txt'), mode='wt') for i in range(NUM_FILES)]
 
@@ -30,8 +27,6 @@ def process(input_file_name: str, output_dirname: str):
                 current_id = data['index']['_id']
                 continue
             if 'text' not in data:
-                continue
-            if current_id in skip_ids:
                 continue
 
             text = data['text']

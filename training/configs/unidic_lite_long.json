@@ -1,5 +1,5 @@
 {
-  "description": "mecab + unidic-liteを模した単語分割・品詞推定を行うための設定ファイル 256文字",
+  "description": "mecab + unidic-liteを模した単語分割・品詞推定を行うための設定ファイル 1024文字",
   "parts_of_speech": [
     "名詞",
     "代名詞",
@@ -25,7 +25,7 @@
   "hidden_size": 116,
   "initializer_range": 0.02,
   "intermediate_size": 468,
-  "max_position_embeddings": 256,
+  "max_position_embeddings": 1024,
   "num_attention_heads": 4,
   "num_hidden_layers": 4,
   "num_hidden_groups": 1,

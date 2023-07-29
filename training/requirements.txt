@@ -1,5 +1,6 @@
 torch
 pytorch_lightning
+pytorch_optimizer
 transformers
 fugashi[unidic-lite]
 onnx
