@@ -21,5 +21,6 @@ class SudachiTokenizer:
     def tokenize(self, text: str) -> list:
         tokens = []
         for word in self.tokenizer.tokenize(text):
-            tokens.append((word.surface(), word.part_of_speech()[0]))
+            if len(word.surface()) > 0:
+                tokens.append((word.surface(), word.part_of_speech()[0]))
         return tokens

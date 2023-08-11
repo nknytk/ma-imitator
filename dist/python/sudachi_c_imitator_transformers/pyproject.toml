@@ -3,12 +3,12 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "unidic_lite_imitator_transformers"
+name = "sudachi_c_imitator_transformers"
 version = "0.2.0"
 authors = [
   { name="Yutaka Nakano", email="nknytk.dev@gmail.com" },
 ]
-description = "Imitate Japanese morphological analysis of mecab and unidic_lite with a small transformers model."
+description = "Imitate Japanese morphological analysis of Sudachi SplitMode.C and SudachiDict-full with a small transformers model."
 readme = "README.md"
 requires-python = ">=3.8,<=3.11"
 dependencies = [

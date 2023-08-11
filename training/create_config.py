@@ -28,8 +28,8 @@ configs = {
     "char_coverage": 0.995,
     "chars": ""
   },
-  "unidic_lite_long": {
-    "description": "mecab + unidic-liteを模した単語分割・品詞推定を行うための設定ファイル 1024文字",
+  "sudachi": {
+    "description": "sudachiを模した単語分割・品詞推定を行うための設定ファイル 256文字",
     "parts_of_speech": [
       "名詞", "代名詞", "形状詞", "連体詞", "副詞", "接続詞", "感動詞", "動詞", "形容詞",
       "助動詞", "助詞", "接頭辞", "接尾辞", "記号", "補助記号", "空白"
@@ -37,12 +37,12 @@ configs = {
     "attention_probs_dropout_prob": 0,
     "hidden_act": "gelu",
     "hidden_dropout_prob": 0,
-    "embedding_size": 48,
-    "hidden_size": 116,
+    "embedding_size": 64,
+    "hidden_size": 156,
     "initializer_range": 0.02,
-    "intermediate_size": 468,
-    "max_position_embeddings": 1024,
-    "num_attention_heads": 4,
+    "intermediate_size": 624,
+    "max_position_embeddings": 256,
+    "num_attention_heads": 6,
     "num_hidden_layers": 4,
     "num_hidden_groups": 1,
     "net_structure_type": 0,
@@ -51,7 +51,7 @@ configs = {
     "inner_group_num": 1,
     "down_scale_factor": 1,
     "type_vocab_size": 2,
-    "char_coverage": 0.995,
+    "char_coverage": 0.999,
     "chars": ""
   }
 }

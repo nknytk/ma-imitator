@@ -3,17 +3,16 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "unidic_lite_imitator_transformers"
+name = "sudachi_b_imitator"
 version = "0.2.0"
 authors = [
   { name="Yutaka Nakano", email="nknytk.dev@gmail.com" },
 ]
-description = "Imitate Japanese morphological analysis of mecab and unidic_lite with a small transformers model."
+description = "Imitate Japanese morphological analysis of Sudachi SplitMode.B and SudachiDict-full with a small onnx model."
 readme = "README.md"
 requires-python = ">=3.8,<=3.11"
 dependencies = [
-    "torch>=2.0.0",
-    "transformers>=4.21.0"
+    "onnxruntime>=1.14.0"
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -33,4 +32,4 @@ license = {file = "LICENSE"}
 where = ["src"]
 
 [tool.setuptools.package-data]
-"*" = ["*.json", "*.pth"]
+"*" = ["*.json", "*.onnx"]

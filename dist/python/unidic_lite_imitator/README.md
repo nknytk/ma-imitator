@@ -20,4 +20,4 @@ $ pip install unidic_lite_imitator
 [('使い', '動詞'), ('方', '接尾辞'), ('の', '助詞'), ('サンプル', '名詞'), ('です', '助動詞'), ('。', '補助記号')]
 ```
 
-Input string length must be 192 or less.
+Input string length must be 256 or less.
