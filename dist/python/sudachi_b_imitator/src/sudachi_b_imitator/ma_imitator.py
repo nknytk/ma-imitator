@@ -73,6 +73,11 @@ class Tagger:
                 tokens.append((' ', '[PAD]'))
             elif pos_id == 1:
                 word.append(char)
+            elif pos_id >= len(self.id_to_pos):
+                if pos:
+                    tokens.append((''.join(word), pos))
+                word = [char]
+                pos = '名詞'
             else:
                 if pos:
                     tokens.append((''.join(word), pos))
