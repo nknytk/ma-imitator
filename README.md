@@ -17,6 +17,9 @@
     * ONNX版: [sudachi_c_imitator](https://pypi.org/project/sudachi-c-imitator/)
     * Transformers版: [sudachi_c_imitator_transformers](https://pypi.org/project/sudachi-c-imitator/)
 
+なお、深層学習実行ランタイムは大きな容量を必要とします。深層学習を伴わない場面で本製品を利用することにメリットはありません。深層学習を伴わない場面で形態素解析が必要な場合、既存の辞書ベースの形態素解析機をご利用ください。
+
+
 ### インストール方法
 
 パッケージ名を指定してpip installしてください。
@@ -40,6 +43,8 @@ print(tagger.parse(sample_text))
 # 下記の内容が標準出力されます
 # [('使い', '動詞'), ('方', '接尾辞'), ('の', '助詞'), ('サンプル', '名詞'), ('です', '助動詞'), ('。', '補助記号')]
 ```
+
+もっと長い文字数を入力する必要がある場合、[dist/long](./dist/long)以下から対応する`config.json`と`model.onnx`または`model.pth`をダウンロードして入れ替えてください。処理速度低下と引き換えに最大1024文字まで入力できるようになります。
 
 ### パッケージごとの出力の差異
 
@@ -71,8 +76,10 @@ print(tagger.parse(sample_text))
 | F1-Score | 0.973 | 0.962 | 0.964 |
 | IOU | 0.948 | 0.927 | 0.931 |
 
-なお、深層学習実行ランタイムは大きな容量を必要とします。深層学習を伴わない場面で本製品を利用することにメリットはありません。深層学習を伴わない場面で形態素解析が必要な場合、既存の辞書ベースの形態素解析機をご利用ください。
-
 ## 学習
 
 `training/` 以下に学習用のコードが掲載されています。
+
+## 謝辞
+
+公開されている学習済みモデルは、[TPU Research Cloud](https://sites.research.google/trc/about/)から提供されたCloud TPUにより学習されました。
