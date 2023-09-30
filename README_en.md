@@ -45,6 +45,8 @@ print(tagger.parse(sample_text))
 
 If your input string is longer than 256 characters, download corresponding `config.json` and `model.onnx` or `model.pth` from [dist/long](./dist/long) and replace from original ones. Then you can input a string of up to 1024 characters in exchange for a decrease in processing speed.
 
+You can [try ONNX version models on browser](https://nknytk.github.io/presentations/demo/ma-imitator/unidic_lite_imitator.html) with ONNX Runtime Web.
+
 ### Difference of the Models
 
 The order in which the words are divided into shorter segments is: unidic_lite, Sudachi B, Sudachi C.

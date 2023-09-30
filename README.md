@@ -46,6 +46,8 @@ print(tagger.parse(sample_text))
 
 もっと長い文字数を入力する必要がある場合、[dist/long](./dist/long)以下から対応する`config.json`と`model.onnx`または`model.pth`をダウンロードして入れ替えてください。処理速度低下と引き換えに最大1024文字まで入力できるようになります。
 
+また、ONNX版のモデルをONNX Runtime Webで動作させる[ブラウザ上のデモ](https://nknytk.github.io/presentations/demo/ma-imitator/unidic_lite_imitator.html)も利用可能です。
+
 ### パッケージごとの出力の差異
 
 単語を短く分割する順にunidic_lite, Sudachi B, Sudachi Cとなります。
